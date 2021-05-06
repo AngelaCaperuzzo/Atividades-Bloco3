@@ -14,7 +14,7 @@ export class InicioComponent implements OnInit {
 
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
 
     if(environment.token == ''){
       alert('Ops, sua seção expirou... Por favor faça o login novamente.')

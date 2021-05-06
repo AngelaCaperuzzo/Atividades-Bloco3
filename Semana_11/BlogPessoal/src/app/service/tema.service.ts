@@ -21,12 +21,24 @@ export class TemaService {
 
   }
 
+  getByIdTema(id: number): Observable<Tema>{
+    return this.http.get<Tema>(`http://localhost:8080/tema/${id}`, this.token)
+  }
+
   //estou postando apenas um item do tema, então não coloco o array no tema, post um item or vez
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('http://localhost:8080/tema', tema, this.token)
 
   }
+
+  putTema(tema: Tema): Observable<Tema>{ //colocando uma alteração
+    return this.http.put<Tema>('http://localhost:8080/tema', tema, this.token)
+  }
   
+  //Não preciso de observable aqui porque não é um objeto, e no meu back end ele onsegue trabalhar corretamente
+  deleteTema(id: number){
+    return this.http.delete(`http://localhost:8080/tema/${id}`, this.token) //para receber o parâmetro do back end preciso usar '``' e '${}'
+  }
 
 }
 
