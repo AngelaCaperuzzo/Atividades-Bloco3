@@ -6,3 +6,5 @@ public descricao: string
 public postagem: Postagem[]
 
 }
+
+//este documento é um objeto
