@@ -25,6 +25,10 @@ export class TemaService {
     return this.http.get<Tema>(`http://localhost:8080/tema/${id}`, this.token)
   }
 
+  getByNomeTema(nome: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`http://localhost:8080/tema/nome/${nome}`, this.token)
+  }
+
   //estou postando apenas um item do tema, então não coloco o array no tema, post um item or vez
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('http://localhost:8080/tema', tema, this.token)
