@@ -23,6 +23,8 @@ export class InicioComponent implements OnInit {
   idTema: number
   user: User = new User()
   idUser = environment.id
+  key = 'date'
+  reverse = true
 
   constructor(
     //injetando dependencias
